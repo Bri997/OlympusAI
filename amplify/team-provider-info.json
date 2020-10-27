@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-olympusai-dev-141948-authRole",
+      "UnauthRoleArn": "arn:aws:iam::872808722347:role/amplify-olympusai-dev-141948-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::872808722347:role/amplify-olympusai-dev-141948-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-olympusai-dev-141948-deployment",
+      "UnauthRoleName": "amplify-olympusai-dev-141948-unauthRole",
+      "StackName": "amplify-olympusai-dev-141948",
+      "StackId": "arn:aws:cloudformation:us-east-1:872808722347:stack/amplify-olympusai-dev-141948/f7be5850-08e2-11eb-85f0-0a7396047ff3",
+      "AmplifyAppId": "d2eqp9hlgo2kyr"
+    }
+  }
+}
