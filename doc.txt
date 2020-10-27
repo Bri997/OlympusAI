@@ -1,0 +1,8 @@
+milestones; 
+1. Amplify Write up API for adding Camera /Equipment /Users - 11/3/20
+1-a : collaborate on AP 
+2. User object on mobile as well as user data in dynamo on cloud - 
+3. Build API infrastructe to render users 
+4. NFC reader and writer - for administraive CAM vs Equip 
+5. Ranking Logic including filtering logic 
+6.Infrastructire to make the activity page work   
