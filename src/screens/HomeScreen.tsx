@@ -11,12 +11,15 @@ import AICoachTabScreen from './tabscreens/AICoachTabScreen';
 import RankingTabScreen from './tabscreens/RankingTabScreen';
 import ProfileTabScreen from './tabscreens/ProfileTabScreen';
 
+
 const Tab = createBottomTabNavigator();
 
 export default class HomeScreen extends React.Component {
+
   render() {
     const { navigate } = this.props.navigation;
     return (
+      
       <Tab.Navigator screenOptions= {({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           console.log(route.name);

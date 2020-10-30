@@ -14,8 +14,14 @@ import OlympusInput from '../components/OlympusInput';
 import OlympusButton from '../components/OlympusButton';
 import OlympusLink from '../components/OlympusLink';
 import { withSSRContext } from 'aws-amplify';
+import { Auth } from 'aws-amplify'
 
-export default class LoginScreen extends React.Component {
+
+
+
+ export default class LoginScreen extends React.Component {
+
+   
   onLogin = () => {
     console.log('login');
     this.props.navigation.navigate('Home');
@@ -50,6 +56,11 @@ export default class LoginScreen extends React.Component {
   }
 }
 
+
+
+
+
+
 // Later on in your styles..
 const styles = StyleSheet.create({
   linearGradient: {
@@ -61,3 +72,5 @@ const styles = StyleSheet.create({
     paddingTop: 30
   }
 });
+
+

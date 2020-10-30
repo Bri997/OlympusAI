@@ -6,13 +6,12 @@ import {
 import CommonStyle from '../../styles/CommonStyle';
 import OlympusTabView from '../../components/OlympusTabView';
 import Search from 'react-native-search-box';
-
 import HomeScene from './homescene/HomeScene';
-
+import { Auth } from 'aws-amplify'
 import { API, graphqlOperation } from 'aws-amplify'
-import { createTodo } from '../../../graphql/mutations'
-import { listTodos } from '../../../graphql/queries'
-
+// import { createTodo } from '../../../graphql/mutations'
+// import { listTodos } from '../../../graphql/queries'
+import OlympusButton from '/Users/edouardovitale/Documents/GitHub/OlympusAI/src/components/OlympusButton.tsx';
 export default class HomeTabScreen extends React.Component {
 
   componentDidMount() {
@@ -23,8 +22,21 @@ export default class HomeTabScreen extends React.Component {
 
   }
 
+  logout = async () => {
+    try {
+      await Auth.signOut()
+      goToAuth()
+    } catch (err) {
+      console.log('error signing out...: ', err)
+    }
+  }
+
+
+
+
   render() {
     const { navigate } = this.props.navigation;
+    
     const items = [
       { id: 'all', text: 'All', scene: () => { return <HomeScene key='all' name='all'/> } },
       { id: 'top', text: 'Top', scene: () => { return <HomeScene key='top' name='top'/> } },
@@ -34,6 +46,7 @@ export default class HomeTabScreen extends React.Component {
     ];
     return (
       <View style={[CommonStyle.mainView]}>
+        <OlympusButton text="Log Out" onPress={this.logout}></OlympusButton>
         <Search backgroundColor='#000'></Search>
         <View style={CommonStyle.flexsize}>
           <OlympusTabView activeTab='all' tabItems={items} style={{marginTop: 8, width: '20%'}} tabsStyle={{justifyContent: 'space-between'}}></OlympusTabView>
