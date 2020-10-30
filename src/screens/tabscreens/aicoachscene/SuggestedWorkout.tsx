@@ -46,7 +46,7 @@ export default class SuggestedWorkout extends React.Component {
     }
 
     nfc_read_data = async () => {
-        /*
+        
         try {
             let tech = Platform.OS === 'ios' ? NfcTech.MifareIOS : NfcTech.NfcA;
             let resp = await NfcManager.requestTechnology(tech, {
@@ -89,7 +89,7 @@ export default class SuggestedWorkout extends React.Component {
             console.log(err.toString());
             this.cleanUp();
         }
-        */
+        
     }
 
     render() {

@@ -177,7 +177,7 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 8WNVQAR39Q;
+						DevelopmentTeam = R4UX4S372F;
 						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
@@ -344,7 +344,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WNVQAR39Q;
+				DEVELOPMENT_TEAM = R4UX4S372F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OlympusAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -353,7 +353,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OlympusAI1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OlympusAI2;
 				PRODUCT_NAME = OlympusAI;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -372,7 +372,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WNVQAR39Q;
+				DEVELOPMENT_TEAM = R4UX4S372F;
 				INFOPLIST_FILE = OlympusAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -380,7 +380,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OlympusAI1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OlympusAI2;
 				PRODUCT_NAME = OlympusAI;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
