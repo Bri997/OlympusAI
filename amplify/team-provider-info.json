@@ -10,6 +10,11 @@
       "StackName": "amplify-olympusai-dev-141948",
       "StackId": "arn:aws:cloudformation:us-east-1:872808722347:stack/amplify-olympusai-dev-141948/f7be5850-08e2-11eb-85f0-0a7396047ff3",
       "AmplifyAppId": "d2eqp9hlgo2kyr"
+    },
+    "categories": {
+      "auth": {
+        "olympusai8369836e": {}
+      }
     }
   }
 }

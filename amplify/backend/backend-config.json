@@ -16,5 +16,13 @@
         }
       }
     }
+  },
+  "auth": {
+    "olympusai8369836e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }
