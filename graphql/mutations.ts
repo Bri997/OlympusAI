@@ -2,12 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createCamera = /* GraphQL */ `
+  mutation CreateCamera(
+    $input: CreateCameraInput!
+    $condition: ModelCameraConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createCamera(input: $input, condition: $condition) {
       id
       name
       description
@@ -16,12 +16,12 @@ export const createTodo = /* GraphQL */ `
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateCamera = /* GraphQL */ `
+  mutation UpdateCamera(
+    $input: UpdateCameraInput!
+    $condition: ModelCameraConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateCamera(input: $input, condition: $condition) {
       id
       name
       description
@@ -30,12 +30,54 @@ export const updateTodo = /* GraphQL */ `
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteCamera = /* GraphQL */ `
+  mutation DeleteCamera(
+    $input: DeleteCameraInput!
+    $condition: ModelCameraConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteCamera(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createEquipment = /* GraphQL */ `
+  mutation CreateEquipment(
+    $input: CreateEquipmentInput!
+    $condition: ModelEquipmentConditionInput
+  ) {
+    createEquipment(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateEquipment = /* GraphQL */ `
+  mutation UpdateEquipment(
+    $input: UpdateEquipmentInput!
+    $condition: ModelEquipmentConditionInput
+  ) {
+    updateEquipment(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteEquipment = /* GraphQL */ `
+  mutation DeleteEquipment(
+    $input: DeleteEquipmentInput!
+    $condition: ModelEquipmentConditionInput
+  ) {
+    deleteEquipment(input: $input, condition: $condition) {
       id
       name
       description

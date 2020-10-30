@@ -1,4 +1,9 @@
-type Todo @model {
+type Camera @model {
+  id: ID!
+  name: String!
+  description: String
+},
+type Equipment @model {
   id: ID!
   name: String!
   description: String
