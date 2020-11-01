@@ -14,7 +14,7 @@ import OlympusInput from '../components/OlympusInput';
 import OlympusButton from '../components/OlympusButton';
 import OlympusLink from '../components/OlympusLink';
 import { withSSRContext } from 'aws-amplify';
-import { Auth } from 'aws-amplify'
+import { Auth , I18n } from 'aws-amplify'
 
 
 
