@@ -2,6 +2,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const publishResult = /* GraphQL */ `
+  mutation PublishResult($result: ResultInput) {
+    publishResult(result: $result) {
+      id
+      status
+      listings
+    }
+  }
+`;
 export const createCamera = /* GraphQL */ `
   mutation CreateCamera(
     $input: CreateCameraInput!

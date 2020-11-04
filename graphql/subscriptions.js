@@ -2,6 +2,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onSearchResult = /* GraphQL */ `
+  subscription OnSearchResult($id: ID!) {
+    onSearchResult(id: $id) {
+      id
+      status
+      listings
+    }
+  }
+`;
 export const onCreateCamera = /* GraphQL */ `
   subscription OnCreateCamera {
     onCreateCamera {

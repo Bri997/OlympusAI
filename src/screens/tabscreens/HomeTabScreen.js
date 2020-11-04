@@ -11,7 +11,7 @@ import { Auth } from 'aws-amplify'
 import { API, graphqlOperation } from 'aws-amplify'
 // import { createTodo } from '../../../graphql/mutations'
 // import { listTodos } from '../../../graphql/queries'
-import OlympusButton from '/Users/edouardovitale/Documents/GitHub/OlympusAI/src/components/OlympusButton.tsx';
+import OlympusButton from '../../components/OlympusButton';
 export default class HomeTabScreen extends React.Component {
 
   componentDidMount() {

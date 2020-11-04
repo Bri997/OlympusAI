@@ -9,8 +9,12 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 import NfcManager, { NfcTech } from 'react-native-nfc-manager';
-import { parseSync } from '@babel/core';
+
 import CommonStyle from '../../../styles/CommonStyle';
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import * as subscriptions from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/subscriptions';
+import * as queries from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/queries';
+import callGraphQL, { subscribeGraphQL } from "/Users/edouardovitale/Documents/GitHub/OlympusAI/src/graphql-api";
 
 const buttons = [
     { id: 'id00', title: 'CURLS', subtitle: '20 MINUTES'},
@@ -91,6 +95,42 @@ export default class SuggestedWorkout extends React.Component {
         }
         
     }
+    api_test = async () => {
+
+        // const onSearchResultSubscription = `subscription OnSearchResult($queryId: ID!) {
+        //     onSearchResult(id: $queryId) {
+        //       id
+        //       status
+        //       listings
+        //     }
+        //   }`;
+        //   const searchQuery = `query Search($text: String!) {
+        //     search(text: $text) {
+        //       id
+        //       status
+        //     }
+        //   }`;
+
+
+
+
+
+        const { data: { search } } = await API.graphql(
+            graphqlOperation(queries.search , { text: 'test' })
+        ) 
+        console.log(`Query ID: ${search.id}`);
+        
+        // 2. Subscribe to search result
+        console.log("subscribing")
+        const subscription = API.graphql(
+                graphqlOperation(subscriptions.onSearchResult, { id: search.id })).subscribe({
+                next: (result) => console.log(result)
+                })
+            
+
+            subscription.unsubscribe()
+        
+    }
 
     render() {
         return (
@@ -112,6 +152,13 @@ export default class SuggestedWorkout extends React.Component {
                     <TouchableOpacity onPress={this.nfc_read_data}>
                         <View style={styles.button_start}>
                             <Text style={CommonStyle.textBold_Normal}>Start Workout</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={{marginVertical: 15, alignItems: 'center', flex: 1}}>
+                    <TouchableOpacity onPress={this.api_test}>
+                        <View style={styles.button_start}>
+                            <Text style={CommonStyle.textBold_Normal}>API</Text>
                         </View>
                     </TouchableOpacity>
                 </View>

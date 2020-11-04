@@ -2,6 +2,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const search = /* GraphQL */ `
+  query Search($text: String!) {
+    search(text: $text) {
+      id
+      status
+      listings
+    }
+  }
+`;
 export const getCamera = /* GraphQL */ `
   query GetCamera($id: ID!) {
     getCamera(id: $id) {
