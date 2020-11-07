@@ -14,7 +14,8 @@ import CommonStyle from '../../../styles/CommonStyle';
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import * as subscriptions from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/subscriptions';
 import * as queries from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/queries';
-import callGraphQL, { subscribeGraphQL } from "/Users/edouardovitale/Documents/GitHub/OlympusAI/src/graphql-api";
+import awsconfig from '/Users/edouardovitale/Documents/GitHub/OlympusAI/aws-exports';
+Amplify.configure(awsconfig);
 
 const buttons = [
     { id: 'id00', title: 'CURLS', subtitle: '20 MINUTES'},
@@ -97,22 +98,6 @@ export default class SuggestedWorkout extends React.Component {
     }
     api_test = async () => {
 
-        // const onSearchResultSubscription = `subscription OnSearchResult($queryId: ID!) {
-        //     onSearchResult(id: $queryId) {
-        //       id
-        //       status
-        //       listings
-        //     }
-        //   }`;
-        //   const searchQuery = `query Search($text: String!) {
-        //     search(text: $text) {
-        //       id
-        //       status
-        //     }
-        //   }`;
-
-
-
 
 
         const { data: { search } } = await API.graphql(
@@ -122,15 +107,22 @@ export default class SuggestedWorkout extends React.Component {
         
         // 2. Subscribe to search result
         console.log("subscribing")
-        const subscription = API.graphql(
-                graphqlOperation(subscriptions.onSearchResult, { id: search.id })).subscribe({
-                next: (result) => console.log(result)
-                })
-            
 
-            subscription.unsubscribe()
         
-    }
+                const subscription = API.graphql(
+                    graphqlOperation(subscriptions.onSearchResult, { id: search.id})
+                ).subscribe({
+                    error: err => console.log("error caught", err.error),
+                    next: data => console.log("sub data", data.value),
+                        // Stop receiving data updates from the subscription
+                        
+                        
+                    }
+                );
+                    
+                };
+        
+    
 
     render() {
         return (

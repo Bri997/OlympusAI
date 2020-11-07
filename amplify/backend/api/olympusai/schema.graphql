@@ -1,14 +1,8 @@
-type Camera @model {
-  id: ID!
-  name: String!
-  description: String
-},
-type Equipment @model {
+type Todo @model {
   id: ID!
   name: String!
   description: String
 }
-
 
 type Result {
   id: ID!
@@ -39,7 +33,7 @@ type Mutation {
 }
 
 type Subscription {
-  onSearchResult(id: ID!): [Result]
+  onSearchResult(id: ID!): Result
     @aws_subscribe(mutations: [ "publishResult" ])
 }
 

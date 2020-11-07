@@ -10,13 +10,13 @@ import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 import { AmplifyTheme} from 'aws-amplify-react-native';
 
-
+global.Buffer = global.Buffer || require('buffer').Buffer
 
 
 
 const Stack = createStackNavigator();
 
-
+     
 
 const MySectionHeader = Object.assign({}, AmplifyTheme.sectionHeaderText, { color: 'green' });
 const MyTheme = Object.assign({}, AmplifyTheme, { sectionHeaderText: MySectionHeader }); 
