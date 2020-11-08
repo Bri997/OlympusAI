@@ -11,39 +11,6 @@ export const onSearchResult = /* GraphQL */ `
     }
   }
 `;
-export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo {
-    onCreateTodo {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo {
-    onUpdateTodo {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo {
-    onDeleteTodo {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreateCamera = /* GraphQL */ `
   subscription OnCreateCamera {
     onCreateCamera {
@@ -102,6 +69,39 @@ export const onUpdateEquipment = /* GraphQL */ `
 export const onDeleteEquipment = /* GraphQL */ `
   subscription OnDeleteEquipment {
     onDeleteEquipment {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateStation = /* GraphQL */ `
+  subscription OnCreateStation {
+    onCreateStation {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateStation = /* GraphQL */ `
+  subscription OnUpdateStation {
+    onUpdateStation {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteStation = /* GraphQL */ `
+  subscription OnDeleteStation {
+    onDeleteStation {
       id
       name
       description

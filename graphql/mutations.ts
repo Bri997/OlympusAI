@@ -11,48 +11,6 @@ export const publishResult = /* GraphQL */ `
     }
   }
 `;
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    createTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    updateTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    deleteTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createCamera = /* GraphQL */ `
   mutation CreateCamera(
     $input: CreateCameraInput!
@@ -129,6 +87,48 @@ export const deleteEquipment = /* GraphQL */ `
     $condition: ModelEquipmentConditionInput
   ) {
     deleteEquipment(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createStation = /* GraphQL */ `
+  mutation CreateStation(
+    $input: CreateStationInput!
+    $condition: ModelStationConditionInput
+  ) {
+    createStation(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateStation = /* GraphQL */ `
+  mutation UpdateStation(
+    $input: UpdateStationInput!
+    $condition: ModelStationConditionInput
+  ) {
+    updateStation(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteStation = /* GraphQL */ `
+  mutation DeleteStation(
+    $input: DeleteStationInput!
+    $condition: ModelStationConditionInput
+  ) {
+    deleteStation(input: $input, condition: $condition) {
       id
       name
       description

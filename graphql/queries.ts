@@ -11,35 +11,6 @@ export const search = /* GraphQL */ `
     }
   }
 `;
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModelTodoFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getCamera = /* GraphQL */ `
   query GetCamera($id: ID!) {
     getCamera(id: $id) {
@@ -87,6 +58,35 @@ export const listEquipments = /* GraphQL */ `
     $nextToken: String
   ) {
     listEquipments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getStation = /* GraphQL */ `
+  query GetStation($id: ID!) {
+    getStation(id: $id) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStations = /* GraphQL */ `
+  query ListStations(
+    $filter: ModelStationFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStations(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
