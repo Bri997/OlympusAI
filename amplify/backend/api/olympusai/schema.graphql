@@ -4,6 +4,18 @@ type Todo @model {
   description: String
 }
 
+type Camera @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Equipment @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
 type Result {
   id: ID!
   status: ResultStatus!
