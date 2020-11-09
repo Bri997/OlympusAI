@@ -1,5 +1,3 @@
-
-
 type Camera @model {
   id: ID!
   name: String!
@@ -47,12 +45,21 @@ type Mutation {
 }
 
 type Subscription {
-  onSearchResult(id: ID!): Result
-    @aws_subscribe(mutations: [ "publishResult" ])
+  onSearchResult(id: ID!): Result @aws_subscribe(mutations: ["publishResult"])
 }
 
 schema {
   query: Query
   mutation: Mutation
   subscription: Subscription
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Query {
+  user(id: String): User
 }
