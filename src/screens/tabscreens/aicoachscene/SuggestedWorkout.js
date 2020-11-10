@@ -14,6 +14,7 @@ import CommonStyle from '../../../styles/CommonStyle';
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import * as subscriptions from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/subscriptions';
 import * as queries from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/queries';
+import * as mutations from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/mutations';
 import awsconfig from '/Users/edouardovitale/Documents/GitHub/OlympusAI/aws-exports';
 Amplify.configure(awsconfig);
 var equipmentData = 2
@@ -100,18 +101,40 @@ export default class SuggestedWorkout extends React.Component {
 
     properties = async (data) => { 
 
-        console.log("sub data", data)
+        console.log("sub data", data.onEquipmentNotification)
+        
+        if (data.onEquipmentNotification.action == 'Add-Equipment') {
 
-    }
+            const { data: { equipmentQuery} } = await API.graphql(
+                graphqlOperation(queries.equipmentQuery , { EquipmentID: '123456789' })
+            ) 
+            console.log(`Query ID2: ${equipmentQuery.id}`)
+           
+                    
+            const subscription = API.graphql(
+                graphqlOperation(subscriptions.onEquipmentConfirmation, { id: equipmentQuery.id})
+            ).subscribe({
+                error: err => console.log("error caught", err.error),
+                next: data => {
+                    console.log(data.value.data)
+                    subscription.unsubscribe();
+                },
+                }
+            );
+
+
+        }
+    } 
+
 
     api_test = async () => {
 
 
 
         const { data: { stationConfigurations} } = await API.graphql(
-            graphqlOperation(queries.stationConfigurations , { StationID: 'test' })
+            graphqlOperation(queries.stationConfigurations , { StationID: { user: "eddy",  Station: "123456"} })
         ) 
-        console.log(`Query ID: ${stationConfigurations.id}`);
+        console.log(`Query ID: ${stationConfigurations.status}`);
         
         // 2. Subscribe to search result
         console.log("subscribing")

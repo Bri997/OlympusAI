@@ -81,7 +81,7 @@ export const createEquipment = /* GraphQL */ `
     createEquipment(input: $input, condition: $condition) {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }
@@ -95,7 +95,7 @@ export const updateEquipment = /* GraphQL */ `
     updateEquipment(input: $input, condition: $condition) {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }
@@ -109,7 +109,7 @@ export const deleteEquipment = /* GraphQL */ `
     deleteEquipment(input: $input, condition: $condition) {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }

@@ -3,8 +3,16 @@
 // this is an auto generated file. This will be overwritten
 
 export const stationConfigurations = /* GraphQL */ `
-  query StationConfigurations($StationID: String!) {
+  query StationConfigurations($StationID: Trigger_Input) {
     stationConfigurations(StationID: $StationID) {
+      id
+      status
+    }
+  }
+`;
+export const equipmentQuery = /* GraphQL */ `
+  query EquipmentQuery($EquipmentID: String!) {
+    equipmentQuery(EquipmentID: $EquipmentID) {
       id
       status
     }
@@ -44,7 +52,7 @@ export const getEquipment = /* GraphQL */ `
     getEquipment(id: $id) {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }
@@ -60,7 +68,7 @@ export const listEquipments = /* GraphQL */ `
       items {
         id
         name
-        description
+        type
         createdAt
         updatedAt
       }

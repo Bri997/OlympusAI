@@ -65,7 +65,7 @@ export const onCreateEquipment = /* GraphQL */ `
     onCreateEquipment {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }
@@ -76,7 +76,7 @@ export const onUpdateEquipment = /* GraphQL */ `
     onUpdateEquipment {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }
@@ -87,7 +87,7 @@ export const onDeleteEquipment = /* GraphQL */ `
     onDeleteEquipment {
       id
       name
-      description
+      type
       createdAt
       updatedAt
     }

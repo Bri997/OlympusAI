@@ -9,7 +9,7 @@ type Camera @model {
 type Equipment @model {
   id: ID!
   name: String!
-  description: String
+  type: String
 }
 
 type Station @model {
@@ -46,15 +46,14 @@ input Equipment_Notification_Input {
 
 input Equipment_Confirmation_Input {
   id: ID!
-  equipmentId: String
+  equipmentName: String
   
 }
 input Trigger_Input {
-  id: ID!
   user: String
-  method:String
+  Station:String
 }
-type ResultTest {
+type QueryOutPut {
   id: ID!
   status: String
 }
@@ -62,10 +61,10 @@ type ResultTest {
 
 
 
-
 type Query {
   # called by client to initiate long running search
-  stationConfigurations(StationID: String!): ResultTest
+  stationConfigurations(StationID: Trigger_Input): QueryOutPut
+  equipmentQuery(EquipmentID: String!): QueryOutPut
 
 
 }
