@@ -2,12 +2,28 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onSearchResult = /* GraphQL */ `
-  subscription OnSearchResult($id: ID!) {
-    onSearchResult(id: $id) {
+export const onEquipmentNotification = /* GraphQL */ `
+  subscription OnEquipmentNotification($id: ID!) {
+    onEquipmentNotification(id: $id) {
       id
-      status
-      listings
+      action
+      launchType
+    }
+  }
+`;
+export const onEquipmentConfirmation = /* GraphQL */ `
+  subscription OnEquipmentConfirmation($id: ID!) {
+    onEquipmentConfirmation(id: $id) {
+      id
+      equipmentName
+    }
+  }
+`;
+export const onTriggerWorkout = /* GraphQL */ `
+  subscription OnTriggerWorkout($id: ID!) {
+    onTrigger_Workout(id: $id) {
+      id
+      action
     }
   }
 `;

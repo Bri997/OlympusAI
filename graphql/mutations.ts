@@ -2,12 +2,32 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const publishResult = /* GraphQL */ `
-  mutation PublishResult($result: ResultInput) {
-    publishResult(result: $result) {
+export const publishEquipmentNotification = /* GraphQL */ `
+  mutation PublishEquipmentNotification(
+    $notification: Equipment_Notification_Input
+  ) {
+    publishEquipmentNotification(notification: $notification) {
       id
-      status
-      listings
+      action
+      launchType
+    }
+  }
+`;
+export const publishEquipmentConfirmation = /* GraphQL */ `
+  mutation PublishEquipmentConfirmation(
+    $confirmation: Equipment_Confirmation_Input
+  ) {
+    publishEquipmentConfirmation(confirmation: $confirmation) {
+      id
+      equipmentName
+    }
+  }
+`;
+export const triggerWorkout = /* GraphQL */ `
+  mutation TriggerWorkout($trigger: Trigger_Input) {
+    triggerWorkout(trigger: $trigger) {
+      id
+      action
     }
   }
 `;

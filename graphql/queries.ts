@@ -2,12 +2,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const search = /* GraphQL */ `
-  query Search($text: String!) {
-    search(text: $text) {
+export const stationConfigurations = /* GraphQL */ `
+  query StationConfigurations($StationID: String!) {
+    stationConfigurations(StationID: $StationID) {
       id
       status
-      listings
     }
   }
 `;

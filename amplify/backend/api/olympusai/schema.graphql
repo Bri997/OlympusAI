@@ -18,37 +18,76 @@ type Station @model {
   description: String
 }
 
-type Result {
+
+type Equipment_Notification {
   id: ID!
-  status: ResultStatus!
-  listings: [String]
+  action: String
+  launchType: String
 }
 
-enum ResultStatus {
-  PENDING
-  COMPLETE
-  ERROR
+
+type Equipment_Confirmation {
+  id: ID!
+  equipmentName: String
 }
 
-input ResultInput {
+type Trigger {
   id: ID!
-  status: ResultStatus!
-  listings: [String]!
+  action: String
+
 }
+
+
+input Equipment_Notification_Input {
+  id: ID!
+  action: String
+  launchType: String
+}
+
+input Equipment_Confirmation_Input {
+  id: ID!
+  equipmentId: String
+  
+}
+input Trigger_Input {
+  id: ID!
+  user: String
+  method:String
+}
+type ResultTest {
+  id: ID!
+  status: String
+}
+
+
+
+
 
 type Query {
   # called by client to initiate long running search
-  search(text: String!): Result
+  stationConfigurations(StationID: String!): ResultTest
+
+
 }
 
 type Mutation {
   # called by backend when search is complete
-  publishResult(result: ResultInput): Result
+
+  publishEquipmentNotification(notification: Equipment_Notification_Input): Equipment_Notification
+  publishEquipmentConfirmation(confirmation: Equipment_Confirmation_Input): Equipment_Confirmation
+  triggerWorkout(trigger: Trigger_Input): Trigger
+
 }
 
 type Subscription {
-  onSearchResult(id: ID!): Result
-    @aws_subscribe(mutations: [ "publishResult" ])
+
+      onEquipmentNotification(id: ID!): Equipment_Notification
+    @aws_subscribe(mutations: [ "publishEquipmentNotification" ])
+      onEquipmentConfirmation(id: ID!): Equipment_Confirmation
+    @aws_subscribe(mutations: [ "publishEquipmentConfirmation" ])
+      onTrigger_Workout(id: ID!): Trigger
+    @aws_subscribe(mutations: [ "triggerWorkout" ])
+
 }
 
 schema {

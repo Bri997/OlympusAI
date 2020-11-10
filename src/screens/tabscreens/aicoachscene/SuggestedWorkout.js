@@ -16,6 +16,7 @@ import * as subscriptions from '/Users/edouardovitale/Documents/GitHub/OlympusAI
 import * as queries from '/Users/edouardovitale/Documents/GitHub/OlympusAI/graphql/queries';
 import awsconfig from '/Users/edouardovitale/Documents/GitHub/OlympusAI/aws-exports';
 Amplify.configure(awsconfig);
+var equipmentData = 2
 
 const buttons = [
     { id: 'id00', title: 'CURLS', subtitle: '20 MINUTES'},
@@ -96,31 +97,41 @@ export default class SuggestedWorkout extends React.Component {
         }
         
     }
+
+    properties = async (data) => { 
+
+        console.log("sub data", data)
+
+    }
+
     api_test = async () => {
 
 
 
-        const { data: { search } } = await API.graphql(
-            graphqlOperation(queries.search , { text: 'test' })
+        const { data: { stationConfigurations} } = await API.graphql(
+            graphqlOperation(queries.stationConfigurations , { StationID: 'test' })
         ) 
-        console.log(`Query ID: ${search.id}`);
+        console.log(`Query ID: ${stationConfigurations.id}`);
         
         // 2. Subscribe to search result
         console.log("subscribing")
 
         
                 const subscription = API.graphql(
-                    graphqlOperation(subscriptions.onSearchResult, { id: search.id})
+                    graphqlOperation(subscriptions.onEquipmentNotification, { id: stationConfigurations.id})
                 ).subscribe({
                     error: err => console.log("error caught", err.error),
-                    next: data => console.log("sub data", data.value),
-                        // Stop receiving data updates from the subscription
+                    next: data => {
                         
-                        
+                        this.properties(data.value.data)
+                        subscription.unsubscribe();
+                    },
                     }
                 );
-                    
+    
                 };
+    
+       
         
     
 
